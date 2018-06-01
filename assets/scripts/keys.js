@@ -4,7 +4,7 @@
 
 
 // Replace the subscriptionKey string value with your valid subscription key.
-var subscriptionKey = "";
+var subscriptionKey = "9ca793d2ffbf463bb985caa05890e0e2";
 
 
 // Replace or verify the region.
@@ -15,5 +15,5 @@ var subscriptionKey = "";
 //
 // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
 // a free trial subscription key, you should not need to change this region.
-var uriBase = "";
+var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/";
 

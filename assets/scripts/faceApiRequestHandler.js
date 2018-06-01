@@ -55,3 +55,59 @@ function sendRequest(requestUri, requestType, requestBody, requestParams) {
       alert(errorString);
     });
 }
+
+function createFaceList(){
+    var faceListName = $("#inputFaceListName").val();
+    
+    var requestUrl = faceListUri + faceListName;
+    
+    var requestParam = {
+        "faceListId": faceListName
+    };
+    
+    var requestBody = {
+        "name": faceListName 
+    };
+    sendRequest(requestUrl, PUT, requestBody, requestParam);
+}
+
+function getFaceList(){
+    var faceListName = $("#inputFaceListName").val();
+    
+    var requestUrl = faceListUri + faceListName;
+    
+    var requestParam = {
+        "faceListId": faceListName
+    };
+    
+    var requestBody = {};
+    sendRequest(requestUrl, GET, requestBody, requestParam);
+}
+
+function addFaceToFaceList(){
+    var faceListName = $("#inputFaceListName").val();
+    
+    var requestUrl = faceListUri + faceListName + addFaceUri;
+    
+    var requestParam = {
+        "faceListId": faceListName
+    };
+    
+    var requestBody = {
+        "url": $("#inputImage").val()
+    };
+    sendRequest(requestUrl, POST, requestBody, requestParam); 
+}
+
+function findSimilarFaces(){
+    var faceListName = $("#inputFaceListName").val();
+    var face_Id = $("#inputFaceId").val();
+    
+    var requestParam = {};
+    var requestBody = {
+        "faceId": face_Id,
+        "faceListId": faceListName
+    };
+    
+    sendRequest(findSimilarsUri, POST, requestBody, requestParam);
+}
